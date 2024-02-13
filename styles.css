@@ -1,0 +1,51 @@
+body {
+    margin: 0px !important;
+    overflow: overlay;
+    overflow-x: hidden;
+}
+
+/* Name styles */
+
+#myName {
+    margin: 0%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Sections Styles */
+
+#section-1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+#section-2 {
+    width: 100vw;
+    height: 100vh;
+}
+
+#section-1 #backdrop {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-image: url('./assets/images/trees-sky-sai.jpg');
+    background-size: cover;
+    transform: scale(1.0);
+    transition: filter 500ms linear;
+    justify-content: space-around;
+}
+
+#section-3 #backdrop {
+    height: 100%;
+    width: 100%;
+    background-image: url('./assets/images/trees-sky-sai.jpg');
+    background-size: cover;
+    transform: scale(1.0);
+    transition: filter 500ms linear;
+}
+
+/*Edit Scrollbar*/
+::-webkit-scrollbar {
+    width: 0.5em;
+    display: none;
+}
