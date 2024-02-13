@@ -1,15 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/signoria');
+                
 body {
     margin: 0px !important;
     overflow: overlay;
     overflow-x: hidden;
+    font-family: 'Signoria', sans-serif;
 }
 
 /* Name styles */
 
 #myName {
+    font-size: 30px;
     margin: 0%;
     margin-top: auto;
     margin-bottom: auto;
+    transition: color 500ms linear;
 }
 
 /* Sections Styles */
@@ -28,7 +33,7 @@ body {
     display: flex;
     height: 100%;
     width: 100%;
-    background-image: url('./assets/images/trees-sky-sai.jpg');
+    background-image: url('./assets/images/skyline-sai.jpg');
     background-size: cover;
     transform: scale(1.0);
     transition: filter 500ms linear;
@@ -49,3 +54,25 @@ body {
     width: 0.5em;
     display: none;
 }
+
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 1;
+    transform: rotate(45deg);
+    animation: shootingStarAnimation 0.5s linear forwards;
+  }
+  
+  @keyframes shootingStarAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(200px) translateY(-300px) rotate(70deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-200px) translateY(-200px) rotate(70deg);
+    }
+  }
