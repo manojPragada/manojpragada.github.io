@@ -1,9 +1,9 @@
 var matrixRegex = /matrix\((-?\d*\.?\d+),\s*0,\s*0,\s*(-?\d*\.?\d+),\s*0,\s*0\)/;
 var section1Height, screenPos;
 
-$(window).on('load', function(){
+$(window).on('load', function () {
     section1Height = document.getElementById("section-1").clientHeight;
-    document.getElementById("myName").style.marginTop = (section1Height/2) + "px";
+    document.getElementById("myName").style.marginTop = (section1Height / 2) + "px";
 });
 
 $(document).scroll(function () {
@@ -18,14 +18,25 @@ $(document).scroll(function () {
         ele.style.filter = 'grayscale(0%)';
         document.getElementById("myName").style.color = "black";
         ele.style.transform = 'scale(' + currentScale + ')';
-        document.getElementById("myName").style.transform = 'scale(' + ((currentScale > 1.4)?currentScale-0.4:1) + ')';
+        if (navigator.maxTouchPoints > 0) {
+            // Add event listeners for touch events
+            // Adapt UI/UX for touch interactions
+            ele.style.transform = 'scale(' + currentScale + ')';
+            document.getElementById("myName").style.transform = 'scale(' + 0.5 + ')';
+
+        } else {
+            // Add event listeners for mouse events
+            // Adapt UI/UX for mouse interactions{
+            ele.style.transform = 'scale(' + currentScale + ')';
+            document.getElementById("myName").style.transform = 'scale(' + ((currentScale > 1.4) ? currentScale - 0.4 : 1) + ')';
+        }
     } else if ((screenHeight / 1.2) < screenPos) {
         ele.style.filter = 'grayscale(100%)';
         document.getElementById("myName").style.color = "white";
     }
-    var nameScale = (section1Height/2) + (screenPos / 2);
+    var nameScale = (section1Height / 2) + (screenPos / 2);
     if (nameScale > (section1Height - 100)) {
         nameScale = section1Height - 100;
     }
-    document.getElementById("myName").style.marginTop = nameScale + "px";   
+    document.getElementById("myName").style.marginTop = nameScale + "px";
 });
